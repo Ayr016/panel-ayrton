@@ -45,6 +45,8 @@ def dashboard():
     publicaciones_url = f"https://api.mercadolibre.com/users/{user_id}/items/search"
     res = requests.get(publicaciones_url, headers=headers)
     ids = res.json().get("results", [])
+    print("IDS OBTENIDOS:", ids)
+
 
     productos = []
     for id_producto in ids[:20]:
